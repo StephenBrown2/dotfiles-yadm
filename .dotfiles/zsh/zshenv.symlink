@@ -33,7 +33,8 @@ export PAGER=less
 ##
 ## Paths
 ##
-export BREW_PREFIX="$(/usr/local/bin/brew --prefix)"
+[[ -f ~/.dotfiles/homebrew/path.zsh ]] && source ~/.dotfiles/homebrew/path.zsh
+export BREW_PREFIX="${HOMEBREW_PREFIX-$(/usr/local/bin/brew --prefix)}"
 export GOPATH="$HOME/go"
 export XDG_DATA_DIRS="$BREW_PREFIX/share:$XDG_DATA_DIRS"
 export PATH="$BREW_PREFIX/bin:$BREW_PREFIX/sbin:${GOPATH//://bin:}/bin:$PATH"
