@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+# docker rm -f -v $(docker ps -aq)
+# docker rmi -f  $(docker images -q)
+# docker volume rm $(docker volume ls -q)
+# docker network rm $(docker network ls -q)
+
+docker system df
+
+docker system prune -f
+echo "Removing all stopped containers."
+docker container prune -f
+echo "Removing all dangling images."
+docker image prune -f
+echo "Removing all local volumes not used by at least one container."
+docker volume prune -f
+echo "Removing all networks not used by at least one container."
+docker network prune -f
+
+docker system df

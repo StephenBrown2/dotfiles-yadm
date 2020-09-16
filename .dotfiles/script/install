@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# Run all dotfiles installers.
+
+find "${DOTFILES}" -name install.sh | while read installer; do
+    echo "› ${installer}...";
+    sh -c "${installer}";
+done

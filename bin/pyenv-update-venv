@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+venv=${1}
+prefix=$(pyenv prefix ${venv})
+oldver=$(pyenv virtualenvs | grep "envs/${venv} " | awk -F/ '{print $1}' | awk '{print $1}')
+oldmaj=$(echo ${oldver} | awk -F. '{print $1"."$2}')
+newver=$(pyenv versions | grep -v envs | grep " ${2:-$oldmaj}" | tail -1 | awk '{print $1}')
+
+if [[ $oldver == $newver ]]; then
+  echo "Version is already the latest: ${oldver}"
+  exit
+else
+  echo "Updating ${venv} version from ${oldver} to ${newver}"
+  echo "$(${prefix}/bin/pip freeze | wc -l) deps to migrate"
+  freeze=$(${prefix}/bin/pip freeze | tee ${venv}-${oldver}-requirements.txt)
+  set -x
+  pyenv uninstall -f ${venv}
+  pyenv virtualenv ${newver} ${venv}
+  prefix=$(pyenv prefix ${venv})
+  ${prefix}/bin/pip install -U pip wheel
+  cat "${venv}-${oldver}-requirements.txt" | sed -e '/^\s*#.*$/d' -e '/^\s*$/d' | xargs -n 1 ${prefix}/bin/pip install
+  # ${prefix}/bin/pip install ${freeze}
+  ${prefix}/bin/pip list --outdated
+fi

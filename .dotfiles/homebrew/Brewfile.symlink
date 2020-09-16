@@ -1,0 +1,279 @@
+# Taps
+
+# Homebrew taps
+tap "homebrew/bundle"
+tap "homebrew/cask-drivers"
+tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
+tap "homebrew/cask"
+tap "homebrew/command-not-found"
+tap "homebrew/core"
+tap "homebrew/services"
+
+# Rackspace internal tools
+tap "gts/rs", "https://intra.mirror.rackspace.com/homebrew-rs"
+# ObjectRocket internal tools
+tap "objectrocket/objectrocket", "git@github.com:objectrocket/homebrew-objectrocket.git"
+
+# Dart SDK
+tap "dart-lang/dart"
+# Stonks - Track your losses from the terminal
+tap "ericm/stonks"
+# Antibody - ZSH plugin manager
+tap "getantibody/tap"
+# Github CLI client
+tap "github/gh"
+# Python version management
+tap "jawshooah/pyenv"
+# MongoDB locally
+## tap "mongodb/brew"
+# GitIgnore Generator
+tap "shihanng/gig"
+# Various thoughtbot projects (rcm in particular)
+tap "thoughtbot/formulae"
+# Docker image explorer
+tap "wagoodman/dive"
+
+# Formulae
+
+# Command-line interface for SQLite
+brew "sqlite"
+# General-purpose data compression with high compression ratio
+brew "xz"
+# Automate deployment, configuration, and upgrading
+brew "ansible"
+# Checks ansible playbooks for practices and behaviour
+brew "ansible-lint"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
+# Platform built on V8 to build network applications
+brew "node"
+# Secure and free password manager for all of your devices
+brew "bitwarden-cli"
+# Python code formatter
+brew "black"
+# Fish completion for brew-cask
+brew "brew-cask-completion"
+# New way to see and navigate directory trees
+brew "broot"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
+# Enables you to reproduce the CircleCI environment locally
+brew "circleci"
+# Dependency manager for Cocoa projects
+# brew "cocoapods"
+# GNU File, Shell, and Text utilities
+brew "coreutils"
+# Get a file from an HTTP, HTTPS or FTP server
+brew "curl"
+# Open source programming language to build simple/reliable/efficient software
+brew "go"
+# Command-line interface for Cyberduck (a multi-protocol file transfer tool)
+brew "duck"
+# Modern replacement for 'ls'
+brew "exa"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# Play, record, convert, and stream audio and video
+brew "ffmpeg"
+# Collection of GNU find, xargs, and locate
+brew "findutils"
+# Distributed revision control system
+brew "git"
+# Small git utilities
+brew "git-extras"
+# GNU implementation of the famous stream editor
+brew "gnu-sed"
+# Graph visualization software from AT&T and Bell Labs
+brew "graphviz"
+# The Kubernetes package manager
+brew "helm"
+# The Kubernetes package manager
+brew "helm@2"
+# User-friendly cURL replacement (command-line HTTP client)
+brew "httpie"
+# Add GitHub support to git on the command-line
+brew "hub"
+# Configurable static site generator
+brew "hugo"
+# Lightweight and flexible command-line JSON processor
+brew "jq"
+# Kubernetes command-line interface
+brew "kubernetes-cli"
+# LastPass command-line interface tool
+brew "lastpass-cli"
+# The lazier way to manage everything docker
+brew "lazydocker"
+# Mac App Store command-line interface
+brew "mas"
+# Automated testing for Ansible roles
+brew "molecule"
+# Collection of tools that nobody wrote when UNIX was young
+brew "moreutils"
+# Remote terminal application
+brew "mosh"
+# Tail multiple files in one terminal simultaneously
+brew "multitail"
+# NCurses Disk Usage
+brew "ncdu"
+# Fast, highly customisable system info script
+brew "neofetch"
+# Manage multiple Node.js versions
+brew "nvm"
+# Swiss-army knife of markup format conversion
+brew "pandoc"
+# CLI for Postgres with auto-completion and syntax highlighting
+brew "pgcli"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Optimizer for PNG files
+brew "pngcrush"
+# Framework for managing multi-language pre-commit hooks
+brew "pre-commit"
+# Python version management
+brew "pyenv"
+# Make Python build faster, using the leverage of `ccache`
+brew "pyenv-ccache"
+# Migrate pip packages from one Python version to another
+brew "pyenv-pip-migrate"
+# CLI for Rackspace
+brew "rack"
+# Perl-powered file rename script with many helpful built-ins
+brew "rename"
+# Tools for file renaming
+brew "renameutils"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Prints a steam locomotive if you type sl instead of ls
+brew "sl"
+# Sparklines for the shell
+brew "spark"
+# The cross-shell prompt for astronauts
+brew "starship"
+# Tokencode generator compatible with RSA SecurID 128-bit (AES)
+brew "stoken"
+# Very fast implementation of tldr in Rust
+brew "tealdeer"
+# Program that allows you to count code, quickly
+brew "tokei"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Executes a program periodically, showing output fullscreen
+brew "watch"
+# Execute commands when watched files change
+brew "watchexec"
+# Internet file retriever
+brew "wget"
+# Homebrew, but with Docker images
+brew "whalebrew"
+# Yet Another Dotfiles Manager
+brew "yadm"
+# JavaScript package manager
+brew "yarn"
+# Download YouTube videos from the command-line
+brew "youtube-dl"
+# Process YAML documents from the CLI
+brew "yq"
+# General-purpose lossless data-compression library
+brew "zlib"
+# UNIX shell (command interpreter)
+brew "zsh"
+
+# Rackspace tools
+# Browser plugin for Magic Button and One Click Login
+brew "gts/rs/grandcentral"
+# Hammertime, is a command line utility for Rackers, specifically Linux Systems Administrators, to interact with CORE, Cloud and Rackspace servers with ease from a comfortable place, the command line.
+brew "gts/rs/hammertime"
+
+# ObjectRocket tools
+# Allows you to interact with the infra-api
+brew "objectrocket/objectrocket/infraclient"
+
+# The Dart SDK
+brew "dart-lang/dart/dart"
+# Track your losses from the terminal
+brew "ericm/stonks/stonks"
+# The fastest shell plugin manager
+brew "getantibody/tap/antibody"
+# GitHub CLI
+brew "github/gh/gh"
+# Install packages with every pyenv version
+brew "jawshooah/pyenv/pyenv-default-packages"
+# gitignore file generator
+brew "shihanng/gig/gig"
+# management suite for dotfiles
+brew "thoughtbot/formulae/rcm"
+# A tool for exploring each layer in a docker image
+brew "wagoodman/dive/dive"
+
+# Casks
+
+# 1Password CLI
+cask "1password-cli"
+# The fastest terminal emulator in existence
+cask "alacritty"
+# SDP Client
+cask "appgate-sdp-client"
+# A libre server and cloud storage browser
+cask "cyberduck"
+# Docker Desktop
+cask "docker"
+# Fonts
+cask "font-caskaydiacove-nerd-font"
+cask "font-fantasquesansmono-nerd-font"
+cask "font-firacode-nerd-font"
+cask "font-hack-nerd-font"
+cask "font-inconsolata-for-powerline"
+# Git GUI
+cask "gitkraken"
+# Genealogical Research Software
+cask "gramps"
+# Desktop API client for REST and GraphQL
+cask "insomnia"
+# iTerm 2
+cask "iterm2"
+# Verification, secure messaging and file-sharing
+cask "keybase"
+# Diff GUI
+cask "meld"
+# Silence notifications while screensharing
+cask "muzzle"
+# Reverse engineer Python source code into UML diagrams
+cask "pynsource"
+# MongoDB GUI client
+cask "robo-3t"
+# Session Manager Plugin for the AWS CLI
+cask "session-manager-plugin"
+# 3D Home designer
+cask "sweet-home3d"
+# Upload BG data to Tidepool
+cask "tidepool-uploader"
+# VPN client
+cask "tunnelblick"
+# Oracle VirtualBox VM manager
+cask "virtualbox"
+# Visual Studio Code - Insiders
+cask "visual-studio-code-insiders"
+# Wine Is Not an Emulator for Windows apps
+cask "wine-stable"
+# a version of the X.Org X Window System that runs on OS X
+cask "xquartz"
+# Yubikey Manager
+cask "yubico-yubikey-manager"
+# The official Nmap Security Scanner GUI
+cask "zenmap"
+# Video Conferencing
+cask "zoomus"
+
+# Battery Monitor: Health, Info
+mas "Battery Monitor", id: 836505650
+# Forecast Bar - Weather + Radar
+# mas "Forecast Bar", id: 982710545
+# Tomato One - Free Focus Timer
+mas "Tomato One", id: 907364780
+# mas "Weather for Status Bar", id: 1448031908
+mas "Xcode", id: 497799835

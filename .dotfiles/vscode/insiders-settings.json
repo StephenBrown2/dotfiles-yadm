@@ -1,0 +1,256 @@
+{
+    "[go]": {
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[makefile]": {
+        "editor.autoIndent": "full",
+        "editor.insertSpaces": false
+    },
+    "[markdown]": {
+        "editor.formatOnPaste": false,
+        "editor.formatOnSave": false
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.formatOnPaste": false
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[yaml]": {
+        "editor.autoIndent": "advanced",
+        "editor.defaultFormatter": "redhat.vscode-yaml",
+        "editor.insertSpaces": true,
+        "editor.quickSuggestions": {
+            "comments": false,
+            "other": true,
+            "strings": true
+        },
+        "editor.tabSize": 2
+    },
+    "autoDocstring.docstringFormat": "google",
+    "breadcrumbs.enabled": true,
+    "cSpell.userWords": [
+        "Debugf",
+        "Infof",
+        "Maint",
+        "Mainty",
+        "ansible",
+        "artifactory",
+        "asdict",
+        "asyncio",
+        "backoff",
+        "bson",
+        "deserialization",
+        "deserialize",
+        "errored",
+        "hammertime",
+        "httpx",
+        "isnumeric",
+        "librack",
+        "loggly",
+        "maindb",
+        "maintcal",
+        "maints",
+        "mongodb",
+        "noqa",
+        "pycon",
+        "pydantic",
+        "pylint",
+        "pymongo",
+        "pytest",
+        "pytz",
+        "queryable",
+        "rsemcee",
+        "rtype",
+        "sharded",
+        "systemd",
+        "tolerations",
+        "typer",
+        "tzinfo",
+        "tzname",
+        "unassign",
+        "wifi"
+    ],
+    "dart.flutterSdkPath": "/Users/step7212/git/hub/flutter",
+    "editor.cursorBlinking": "phase",
+    "editor.fontFamily": "'Fantasque Sans Mono', 'Fira Code iScript', 'Fira Code', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontLigatures": true,
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+        80,
+        100,
+        120
+    ],
+    "editor.smoothScrolling": true,
+    "editor.suggestSelection": "first",
+    "editor.tabCompletion": "on",
+    "editor.tabSize": 4,
+    "editor.tokenColorCustomizations": {
+        "textMateRules": [
+            {
+                "name": "comment",
+                "scope": [
+                    "comment"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Keyword Storage",
+                "scope": [
+                    "keyword",
+                    "storage",
+                    "keyword.control"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Entity",
+                "scope": [
+                    "entity.name.type.class",
+                    "entity.other.attribute-name",
+                    "entity.name.method",
+                    "entity.name.tag"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Variable",
+                "scope": [
+                    "variable.language",
+                    "meta.paragraph.markdown",
+                    "support.type.property-name.json",
+                    "string.other.link.title.markdown"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Markdown",
+                "scope": [
+                    "meta.paragraph.markdown",
+                    "string.other.link.title.markdown",
+                    "markup.underline.link.markdown"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            },
+            {
+                "name": "Json",
+                "scope": [
+                    "support.type.property-name.json"
+                ],
+                "settings": {
+                    "fontStyle": "italic"
+                }
+            }
+        ]
+    },
+    "editor.trimAutoWhitespace": true,
+    "files.associations": {
+        "*.tmpl": "gotemplate"
+    },
+    "files.autoSave": "onFocusChange",
+    "files.exclude": {
+        "yarn.lock": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "git.autofetch": true,
+    "githubPullRequests.telemetry.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "gitlens.codeLens.recentChange.enabled": false,
+    "go.alternateTools": {
+        "go-langserver": "gopls"
+    },
+    "go.autocompleteUnimportedPackages": true,
+    "go.buildFlags": [
+        "-v"
+    ],
+    "go.coverOnSingleTest": true,
+    "go.coverageDecorator": {
+        "type": "gutter"
+    },
+    "go.formatTool": "goimports",
+    "go.languageServerExperimentalFeatures": {
+        "autoComplete": true,
+        "format": true
+    },
+    "go.testTimeout": "30s",
+    "go.useCodeSnippetsOnFunctionSuggest": true,
+    "go.useLanguageServer": true,
+    "holiday.gearIconStyle": "santa hat",
+    "kite.showWelcomeNotificationOnStartup": false,
+    "prettier.printWidth": 120,
+    "prettier.tabWidth": 4,
+    "problems.showCurrentInStatus": true,
+    "python.dataScience.jupyterServerURI": "http://127.0.0.1:8888/?token=e13cfa4a872ec354a8870423a984c61a50f8be4d8f538fbe",
+    "python.defaultInterpreterPath": "/Users/step7212/.pyenv/versions/rrad/bin/python",
+    "python.experiments.optInto": [
+        "DeprecatePythonPath - experiment"
+    ],
+    "python.formatting.blackPath": "/usr/local/bin/black",
+    "python.formatting.provider": "black",
+    "python.insidersChannel": "off",
+    "python.jediEnabled": false,
+    "python.languageServer": "Microsoft",
+    "python.venvFolders": [
+        "Library/Caches/pypoetry/virtualenvs/"
+    ],
+    "search.exclude": {
+        "**/bower_components": true,
+        "**/node_modules": true,
+        "/vendor": true
+    },
+    "search.showLineNumbers": true,
+    "search.smartCase": true,
+    "sonarlint.rules": {
+        "python:S107": {
+            "level": "off"
+        }
+    },
+    "telemetry.enableCrashReporter": false,
+    "telemetry.enableTelemetry": false,
+    "terminal.explorerKind": "external",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.enableBold": true,
+    "terminal.integrated.fontFamily": "MesloLGS NF",
+    "terminal.integrated.fontWeight": "300",
+    "terminal.integrated.rightClickCopyPaste": true,
+    "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "window.nativeTabs": true,
+    "window.newWindowDimensions": "maximized",
+    "window.openFilesInNewWindow": "default",
+    "window.openFoldersInNewWindow": "on",
+    "window.restoreWindows": "all",
+    "window.zoomLevel": 0,
+    "workbench.editor.highlightModifiedTabs": true,
+    "workbench.editor.showIcons": true,
+    "workbench.fontAliasing": "auto",
+    "workbench.iconTheme": "vscode-icons",
+    "workbench.startupEditor": "newUntitledFile",
+    "yaml.format.enable": true
+}

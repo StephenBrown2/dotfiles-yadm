@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+SECONDS=0
+JOB="${1}"
+
+if [[ -z $JOB ]]; then
+  JOB=$(jq -r .id <&0)
+  echo "Job ID: ${JOB}"
+fi
+
+secs_to_human() {
+    echo "$(( ${1} / 3600 ))h $(( (${1} / 60) % 60 ))m $(( ${1} % 60 ))s"
+}
+
+STATE=$(or-infra job get -i "${JOB}" | jq -r .state);
+while [[ $STATE != "succeeded" ]]; do
+  if (( "${SECONDS}" > "600" )); then
+    echo -e "Job ${JOB} has not succeeded after 5 minutes.\nCheck https://datastores.slack.com/archives/CBW96CE72 for status."
+    exit ${SECONDS};
+  fi
+  if [[ $STATE == "failed" ]]; then
+    echo "Job failed after $(secs_to_human ${SECONDS})!";
+    exit 1;
+  fi
+  echo "Job is ${STATE} after ${SECONDS}s...";
+  sleep 3;
+  STATE=$(or-infra job get -i "${JOB}" | jq -r .state);
+done
+echo "Job ${STATE} after $(secs_to_human ${SECONDS})!"

@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+function kubectlgetallyaml {
+  for i in $(kubectl api-resources --verbs=list --namespaced -o name | grep -v "events.events.k8s.io" | grep -v "events" | sort | uniq); do
+    filename="${1}-${i}.yaml"
+    echo -n "Resource: ${i} "
+    kubectl -n ${1} get --ignore-not-found ${i} -o yaml | sponge ${filename}
+    [[ -s ${filename} ]] && echo ${filename} || (rm -f ${filename}; echo)
+  done
+}
+
+# get all names
+NAMES=( $(kubectl api-resources --namespaced --verbs list -o name | grep -v "events.events.k8s.io" | grep -v events | sort -u) )
+
+# Now join names into single string delimited with comma
+# Note *, not @
+IFS=,
+NAMES="${NAMES[*]}"
+unset IFS
+
+# --show-kind is enabled implicitly
+kubectl get -n "${1}" --ignore-not-found --show-kind "$NAMES" -o yaml

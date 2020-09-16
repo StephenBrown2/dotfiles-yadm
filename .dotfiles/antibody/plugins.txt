@@ -1,0 +1,31 @@
+agkozak/zsh-z
+caarlos0/ports kind:path
+caarlos0/zsh-mkc
+djui/alias-tips
+mafredri/zsh-async
+robbyrussell/oh-my-zsh path:plugins/colored-man-pages
+robbyrussell/oh-my-zsh path:plugins/command-not-found
+robbyrussell/oh-my-zsh path:plugins/git
+robbyrussell/oh-my-zsh path:plugins/golang
+robbyrussell/oh-my-zsh path:plugins/httpie
+robbyrussell/oh-my-zsh path:plugins/iterm2
+robbyrussell/oh-my-zsh path:plugins/mosh
+robbyrussell/oh-my-zsh path:plugins/ripgrep
+robbyrussell/oh-my-zsh path:plugins/pip
+robbyrussell/oh-my-zsh path:plugins/python
+robbyrussell/oh-my-zsh path:plugins/vscode
+robbyrussell/oh-my-zsh path:plugins/zsh-interactive-cd
+voronkovich/gitignore.plugin.zsh
+zpm-zsh/clipboard
+zpm-zsh/ls
+zpm-zsh/undollar
+zsh-users/zsh-autosuggestions
+zsh-users/zsh-completions
+
+# Keep these last
+# "Slow" to init - 0.05 - 0.10s
+zdharma/fast-syntax-highlighting
+zsh-users/zsh-history-substring-search
+
+# Use powerlevel10k if not using starship.rs
+# romkatv/powerlevel10k

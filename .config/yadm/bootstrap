@@ -1,0 +1,3 @@
+#!/bin/sh
+~/.dotfiles/script/bootstrap
+chmod +x ~/bin/*
