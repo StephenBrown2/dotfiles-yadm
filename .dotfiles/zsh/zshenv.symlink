@@ -31,17 +31,17 @@ export PAGER=less
 # export LESS='-iFMRSX -x4'
 
 ##
-## Make
-##
-export MAKEFLAGS="-j $(nproc)"
-
-##
 ## Paths
 ##
-export BREW_PREFIX="$(brew --prefix)"
+export BREW_PREFIX="$(/usr/local/bin/brew --prefix)"
 export GOPATH="$HOME/go"
 export XDG_DATA_DIRS="$BREW_PREFIX/share:$XDG_DATA_DIRS"
 export PATH="$BREW_PREFIX/bin:$BREW_PREFIX/sbin:${GOPATH//://bin:}/bin:$PATH"
+
+##
+## Make
+##
+export MAKEFLAGS="-j $(nproc)"
 
 umask 022
 

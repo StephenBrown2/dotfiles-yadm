@@ -67,7 +67,7 @@ setup_gitconfig() {
 link_file() {
 	if [ -e "$2" ]; then
 		if [ "$(readlink "$2")" = "$1" ]; then
-			success "skipped $1"
+			success "skipped $1, already linked as $2"
 			return 0
 		else
 			mv "$2" "$2.backup"
@@ -98,11 +98,13 @@ find_zsh() {
 setup_gitconfig
 install_dotfiles
 
+if [ -f ./update ]; then
 info "installing dependencies"
-if ./update; then
+    if  ./update; then
 	success "dependencies installed"
-else
+    else
 	fail "error installing dependencies"
+    fi
 fi
 
 zsh="$(find_zsh)"
