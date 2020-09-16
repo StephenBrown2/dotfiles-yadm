@@ -18,7 +18,10 @@ if [ "$system_type" = "Darwin" ]; then
 fi
 
 # Run the bootstrap script included with the dotfiles
-~/.dotfiles/script/bootstrap
+if [ -f "${HOME}/.dotfiles/script/bootstrap" ]; then
+	echo "Executing ${HOME}/.dotfiles/script/bootstrap"
+	${HOME}/.dotfiles/script/bootstrap
+fi
 
 if [ "$system_type" = "Darwin" ]; then
 
