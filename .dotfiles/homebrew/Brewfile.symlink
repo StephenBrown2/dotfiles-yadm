@@ -21,8 +21,6 @@ tap "dart-lang/dart"
 tap "ericm/stonks"
 # Antibody - ZSH plugin manager
 tap "getantibody/tap"
-# Github CLI client
-tap "github/gh"
 # Python version management
 tap "jawshooah/pyenv"
 # MongoDB locally
@@ -200,7 +198,7 @@ brew "ericm/stonks/stonks"
 # The fastest shell plugin manager
 brew "getantibody/tap/antibody"
 # GitHub CLI
-brew "github/gh/gh"
+brew "gh"
 # Install packages with every pyenv version
 brew "jawshooah/pyenv/pyenv-default-packages"
 # gitignore file generator
