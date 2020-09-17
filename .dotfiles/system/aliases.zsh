@@ -11,4 +11,4 @@ alias less="less -r"
 alias cdr='cd "$(git rev-parse --show-toplevel)"'
 
 # quick hack to make watch work with aliases
-alias watch='watch -c -d -t '
+alias watch='watch -c -t '
