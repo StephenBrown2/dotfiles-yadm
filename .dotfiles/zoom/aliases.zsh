@@ -8,7 +8,7 @@ function zoom(){
         fi
     elif (( $# == 2 )); then
         # open "zoommtg://rackspace.zoom.us/j/${1}?pwd=${2}"
-        open "zoommtg://rackspace.zoom.us/join?action=join&confno=${1}?pwd=${2}"
+        open "zoommtg://rackspace.zoom.us/join?action=join&confno=${1}&pwd=${2}"
     else
         echo "Not sure what to do with: $@"
     fi

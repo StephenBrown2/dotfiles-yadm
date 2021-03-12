@@ -1,44 +1,75 @@
-prompt_order = [
-    "username",
-    "hostname",
-    "directory",
-    "git_branch",
-    "git_commit",
-    "git_state",
-    "git_status",
-    "docker_context",
-    "package",
-    "golang",
-    "nim",
-    "nodejs",
-    "python",
-    "ruby",
-    "rust",
-    "zig",
-    "kubernetes",
-    "memory_usage",
-    # "aws",
-    "env_var",
-    "cmd_duration",
-    "custom",
-    "line_break",
-    "jobs",
-    "battery",
-    "time",
-    "character",
-]
+# Essentially format = "$all", but we need to insert the custom.time module after the regular one
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$swift\
+$terraform\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+${custom.time}\
+$status\
+$character"""
 
-[[battery.display]]  # "bold red" style when capacity is between 0% and 10%
-threshold = 10
+[aws]
+disabled = true
+format = "on [$symbol$profile(\\($region\\))]($style) "
+style = "bold blue"
+symbol = "🅰 "
+
+[[battery.display]]  # "bold red" style when capacity is between 0% and 15%
+threshold = 15
 style = "bold red"
 
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-threshold = 25
-style = "bold yellow"
+[[battery.display]]  # "bold orange" style when capacity is between 15% and 30%
+threshold = 30
+style = "bold fg:#FF7F00"
 
 [[battery.display]]  # "bold yellow" style when capacity is between 30% and 50%
 threshold = 50
-style = "bold fg:#FF7F00"
+style = "bold yellow"
 
 [directory]
 fish_style_pwd_dir_length = 1
@@ -54,6 +85,22 @@ stashed_count.enabled = true
 [kubernetes]
 disabled = false
 
+[shlvl]
+disabled = false
+
+[terraform]
+format = "via [💠 $version$workspace]($style) "
+
 [time]
 disabled = false
-format = " %T"
+format = " [$time]($style) "
+#format = "🕙 [$time]($style) "
+time_range = "07:00:00-17:00:00"
+
+[custom.time]
+symbol = " "
+command = "date '+%H:%M:%S'"
+when = """[[ $(date "+%H") -gt 16 ]]"""
+description = "Displayes the time after work"
+style = "bold red"
+disabled = false

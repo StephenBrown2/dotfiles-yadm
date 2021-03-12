@@ -1,6 +1,7 @@
 #!/bin/sh
+EXCLUDED="zoom|yubico-yubikey-manager"
 brew update
-brew outdated | xargs brew fetch
+brew outdated -q | grep -v $EXCLUDED | xargs brew fetch
 brew upgrade --formula
-brew upgrade --cask --greedy
+brew outdated -q --cask | grep -v $EXCLUDED | xargs brew upgrade --cask
 brew cleanup

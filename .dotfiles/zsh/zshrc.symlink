@@ -9,12 +9,15 @@ export PROJECTS="$HOME/Code"
 
 # your default editor
 export EDITOR='vim'
-export VEDITOR='code-insiders'
-export VSCODE='code-insiders'
+export VEDITOR='code'
+export VSCODE='code'
 
 # all of our zsh files
 typeset -U config_files
 config_files=($DOTFILES/*/*.zsh)
+
+# Set up zinit
+source ~/.zinit/bin/zinit.zsh
 
 # load the path files
 for file in ${(M)config_files:#*/path.zsh}; do
@@ -26,28 +29,42 @@ for file in ${${config_files:#*/path.zsh}:#*/completion.zsh}; do
   source "$file"
 done
 
-autoload -Uz compinit
-if [[ -n ~/.zcompdump(#qN.mh+24) ]]; then
-  compinit;
-else
-  compinit -C;
-fi;
-# for dump in ~/.zcompdump(N.mh+24); do
-#   compinit
-# done
-# compinit -C
+zinit ice atclone"dircolors -b LS_COLORS > clrs.zsh" \
+    atpull'%atclone' pick"clrs.zsh" nocompile'!' \
+    atload'zstyle ":completion:*" list-colors "${(s.:.)LS_COLORS}"'
+zinit light trapd00r/LS_COLORS
 
-# load antibody plugins compiled with:
-function rebuild_antibody(){
-  antibody bundle <"$DOTFILES/antibody/plugins.txt" >~/.zsh_plugins.sh
-  antibody update
-}
-source ~/.zsh_plugins.sh
+zinit wait lucid for \
+    OMZP::colored-man-pages \
+    OMZP::command-not-found \
+    OMZP::dotenv \
+    OMZP::helm \
+    OMZP::httpie \
+    OMZP::kubectl \
+    OMZP::oc \
+    OMZP::vscode \
+    OMZP::zsh-interactive-cd
+
+zinit wait lucid for \
+    caarlos0/zsh-mkc \
+    djui/alias-tips \
+    zpm-zsh/undollar \
+  atload"_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions \
+  atinit"zicompinit; zicdreplay" \
+    zdharma/fast-syntax-highlighting \
+    zsh-users/zsh-history-substring-search
+
+zinit wait lucid atload"zicompinit; zicdreplay" \
+  atpull'zinit creinstall -q .' blockf for \
+    zsh-users/zsh-completions
 
 # load every completion after autocomplete loads
 for file in ${(M)config_files:#*/completion.zsh}; do
   source "$file"
 done
+
+zicompinit; zicdreplay
 
 unset config_files
 
@@ -60,3 +77,4 @@ eval "$(starship init zsh)"
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # zprof
+export PATH="/usr/local/opt/curl/bin:$PATH"
