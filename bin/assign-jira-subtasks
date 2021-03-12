@@ -1,0 +1,135 @@
+#!/Users/step7212/.pyenv/versions/3.9.0/envs/assign-jira-subtasks/bin/python3
+
+import json
+import sys
+import os
+import getpass
+import httpx
+from rich import print
+from rich.styled import Styled
+from rich.table import Table
+
+try:  
+   token = os.environ["JIRA_TOKEN"]
+except KeyError: 
+   token = getpass.getpass(prompt="Please enter token for Jira Auth: ")
+
+client = httpx.Client(
+    base_url="https://objectrocket.atlassian.net/rest/api/3/",
+    auth=("stephen.brown@objectrocket.com", token),
+    headers={"Accept": "application/json"},
+)
+
+def get_style_color(issue: dict):
+    JIRA_COLORS_TO_STYLE = {"blue-gray": "grey66"}
+
+    jira_color = (
+        issue.get("fields", {})
+        .get("status", {})
+        .get("statusCategory", {})
+        .get("colorName")
+    )
+
+    return JIRA_COLORS_TO_STYLE.get(jira_color, jira_color)
+
+
+def get_myself():
+    try:
+        response = client.get("myself")
+    except httpx.RequestError:
+        print("RequestError in get_myself: ", response.text)
+        return {}
+
+    return response.json()
+
+
+def get_issue(id_or_key: str, fields: list = None):
+    fields = fields or []
+    try:
+        response = client.get(
+            f"issue/{id_or_key}",
+            params={"fields": ",".join(fields)} if fields else None,
+        )
+    except httpx.RequestError:
+        print("RequestError in get_issue: ", response.text)
+        return {}
+
+    return response.json()
+
+
+def get_issue_assignee(id_or_key: str):
+    return get_issue(id_or_key, fields=["assignee"])["fields"]["assignee"] or {}
+
+
+def set_issue_assignee(id_or_key: str, assignee_id: str):
+    try:
+        response = client.put(
+            f"issue/{id_or_key}/assignee", json={"accountId": assignee_id}
+        )
+        response.raise_for_status()
+    except httpx.RequestError:
+        print("RequestError in set_issue_assignee: ", response.text)
+        return {}
+    except httpx.HTTPStatusError as err:
+        print(f"{response.status_code} received from set_issue_assignee. {err}")
+        return {}
+
+    return get_issue_assignee(id_or_key)
+
+
+def assign_all_subtasks(id_or_key: str):
+    issue = get_issue(id_or_key, fields=["assignee", "issuetype", "subtasks"])
+
+    issue_text = (
+        f"{issue['fields']['issuetype']['name']} "
+        f"[b][bright_blue]{issue['key']}[/bright_blue][/b]"
+    )
+
+    assignee = issue["fields"]["assignee"]
+
+    if not assignee:
+        print(f"{issue_text} is currently unassigned.")
+        myself = get_myself()
+        print(f"Assigning to [b][magenta]{myself['displayName']}[/magenta][/b]")
+        assignee = set_issue_assignee(id_or_key, myself["accountId"])
+        issue = get_issue(id_or_key)
+
+    table = Table(
+        "Subtask",
+        "Summary",
+        "Status",
+        "Assignee",
+        "New Assignee",
+        title=(
+            f"Subtasks for {issue_text}, assigned to "
+            f"[b][magenta]{assignee['displayName']}[/magenta][/b]"
+        ),
+    )
+
+    for subtask in issue["fields"]["subtasks"]:
+        subtask_assignee = get_issue_assignee(subtask["key"])
+        if subtask_assignee.get("accountId") != assignee["accountId"]:
+            if not subtask_assignee.get("accountId"):
+                assignee_style = "red"
+            else:
+                assignee_style = "yellow"
+
+            new_assignee = set_issue_assignee(subtask["key"], assignee["accountId"])
+        else:
+            new_assignee = subtask_assignee
+            assignee_style = "green"
+
+        table.add_row(
+            subtask["key"],
+            subtask["fields"]["summary"],
+            Styled(subtask["fields"]["status"]["name"], style=get_style_color(subtask)),
+            subtask_assignee.get("displayName"),
+            Styled(new_assignee.get("displayName"), style=assignee_style),
+        )
+
+    print(table)
+
+
+if __name__ == "__main__":
+    for ticket in sorted(sys.argv[1:]):
+        assign_all_subtasks(ticket)
