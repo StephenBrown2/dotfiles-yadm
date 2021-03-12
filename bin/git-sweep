@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+
+REMOTE=${1:-origin}
+if ! (git branch | grep -q "${REMOTE}"); then
+  echo "No remote available, quitting."
+  exit 0
+fi
+
+defaultBranch=$(git config --get --default master init.defaultBranch)
+
+git branch | grep -q "* ${defaultBranch}" || git checkout ${defaultBranch}
+git fetch
+git remote prune $REMOTE
+git branch --merged ${defaultBranch} | grep -v '${defaultBranch}$' | xargs git branch -d
+
+REMOVABLE=$(git branch -r --merged ${defaultBranch} | sed "s/ *${REMOTE}\///" | grep -v "${defaultBranch}$" | grep 'dp\-')
+
+if [[ -z "$REMOVABLE" ]]; then
+  exit 0
+fi
+
+echo "The following remote branches are fully merged and will be removed:"
+echo $REMOVABLE
+
+read -p "Continue (y/n)? " -n 1 -r
+echo
+if [[ $REPLY =~ ^[Yy]$ ]]; then
+  echo $REMOVABLE | xargs git push ${REMOTE} --delete
+fi
