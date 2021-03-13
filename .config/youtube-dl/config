@@ -1,0 +1,9 @@
+# --netrc
+
+--ignore-errors
+
+--output '%(playlist_title)s/%(uploader)s/%(upload_date)s - %(title)s <%(resolution)s> [%(id)s].%(ext)s'
+
+--embed-subs
+
+--download-archive ~/YouTube/archive.ytdl
