@@ -91,6 +91,8 @@ brew "git-extras"
 brew "go"
 # GNU implementation of the famous stream editor
 brew "gnu-sed"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Stricter gofmt
 brew "gofumpt"
 # Graph visualization software from AT&T and Bell Labs
