@@ -1,0 +1,10 @@
+.ssh/config.d/github-ent.conf
+.ssh/config.d/objectrocket.conf
+.ssh/config.d/raxent.conf
+.ssh/config.d/rsbastion.conf
+.ssh/config.d/stepladder.conf
+.ssh/keys/*.key
+.ssh/keys/objectrocket*
+.ssh/keys/rackspace*
+.ssh/keys/rax*
+.ssh/keys/stepladder*
