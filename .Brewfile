@@ -257,6 +257,8 @@ cask "bitwarden"
 # Free universal database tool and SQL client
 cask "dbeaver-community"
 cask "digikam"
+# Voice and text chat software
+cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Tool to hide status bar icons
