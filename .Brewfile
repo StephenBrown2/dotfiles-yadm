@@ -111,6 +111,8 @@ brew "httpie"
 brew "hugo"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Tool that can switch between kubectl contexts easily and create aliases
+brew "kubectx"
 # Lazier way to manage everything docker
 brew "lazydocker"
 # Postgres C API library
