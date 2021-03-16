@@ -244,57 +244,94 @@ brew "shihanng/gig/gig"
 brew "tlk/imagemagick-x11/imagemagick"
 # A tool for exploring each layer in a docker image
 brew "wagoodman/dive/dive"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
 cask "adoptopenjdk"
+# Transfer files from and to an Android smartphone
+cask "android-file-transfer"
+# Desktop client for Android Messages
+cask "android-messages"
+# Tools for building Android applications
+cask "android-studio"
 # Software-defined perimeter for secure network access
 cask "appgate-sdp-client"
 # Data management tool that enables working with SQL Server
 cask "azure-data-studio"
 cask "balance-lock"
+# Tool to flash OS images to SD cards & USB drives
+cask "balenaetcher"
 # Desktop password and login vault
 cask "bitwarden"
+# Tool to show live information about the batteries in various devices
+cask "coconutbattery"
+cask "day-o"
 # Free universal database tool and SQL client
 cask "dbeaver-community"
 cask "digikam"
 # Voice and text chat software
 cask "discord"
+# Disk usage utility
+cask "disk-inventory-x"
 # App to build and share containerized applications and microservices
 cask "docker"
 # Tool to hide status bar icons
 cask "dozer"
 # Finds duplicate files in a computer system
 cask "dupeguru"
+# Web browser
+cask "firefox"
+# Web browser
+cask "firefox-developer-edition"
 cask "font-fantasque-sans-mono"
 cask "font-fantasquesansmono-nerd-font"
 cask "font-firacode-nerd-font"
 cask "font-hack-nerd-font"
+cask "font-ia-writer-mono"
+# Mind-mapping software written in Java
+cask "freemind"
 # Git client focusing on productivity
 cask "gitkraken"
 cask "google-backup-and-sync"
+# Web browser
+cask "google-chrome"
 # Genealogy software
 cask "gramps"
+# Graphically shows disk usage within a file system
+cask "grandperspective"
 # Free and open-source media player
 cask "iina"
 # HTTP and GraphQL Client
 cask "insomnia"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2-beta"
 cask "java"
 # Visual diff and merge tool
 cask "meld"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Multi-platform web browser
+cask "microsoft-edge"
 cask "microsoft-teams"
 # Silence embarrassing notifications while screensharing
 cask "muzzle"
 # Finds large, unwanted files and deletes them
 cask "omnidisksweeper"
-# Command-line shell and scripting language
-cask "powershell"
+# Cloud storage client
+cask "onedrive"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
 # MongoDB management tool
 cask "robo-3t"
+cask "securid"
 # Plugin for AWS CLI to start and end sessions that connect to managed instances
 cask "session-manager-plugin"
 # Instant messaging application focusing on security
 cask "signal-beta"
 cask "sweet-home3d"
+# Unpacks archive files
+cask "the-unarchiver"
 cask "tunnelblick"
 # Development environment
 cask "vagrant"
@@ -311,3 +348,5 @@ cask "yubico-yubikey-manager"
 cask "zenmap"
 # Video communication and virtual meeting platform
 cask "zoom"
+# Outlook Plugin for Zoom.us
+cask "zoom-outlook-plugin"
