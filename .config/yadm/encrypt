@@ -1,3 +1,4 @@
+.aws/credentials
 .ssh/config.d/github-ent.conf
 .ssh/config.d/objectrocket.conf
 .ssh/config.d/raxent.conf
