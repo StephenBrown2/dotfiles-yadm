@@ -59,6 +59,8 @@ brew "openldap"
 brew "curl"
 # Completion script for docker-compose
 brew "docker-compose-completion"
+# Simple command-line tool for creating clusters on Amazon EKS
+brew "eksctl"
 # Modern replacement for 'ls'
 brew "exa"
 # Perl lib for reading and writing EXIF metadata
@@ -336,6 +338,7 @@ cask "signal-beta"
 cask "sweet-home3d"
 # Unpacks archive files
 cask "the-unarchiver"
+# Free and open-source OpenVPN client
 cask "tunnelblick"
 # Development environment
 cask "vagrant"
