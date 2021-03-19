@@ -5,3 +5,4 @@ brew outdated -q | grep -v $EXCLUDED | xargs brew fetch
 brew upgrade --formula
 brew outdated -q --cask | grep -v $EXCLUDED | xargs brew upgrade --cask
 brew cleanup
+rm -f ~/.Brewfile; brew bundle --global --describe dump
