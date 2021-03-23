@@ -22,6 +22,7 @@ $golang\
 $helm\
 $java\
 $julia\
+$kotlin\
 $nim\
 $nodejs\
 $ocaml\
@@ -31,8 +32,10 @@ $purescript\
 $python\
 $ruby\
 $rust\
+$scala\
 $swift\
 $terraform\
+$vagrant\
 $zig\
 $nix_shell\
 $conda\
@@ -51,6 +54,7 @@ $battery\
 $time\
 ${custom.time}\
 $status\
+$shell\
 $character"""
 
 [aws]
@@ -59,15 +63,15 @@ format = "on [$symbol$profile(\\($region\\))]($style) "
 style = "bold blue"
 symbol = "🅰 "
 
-[[battery.display]]  # "bold red" style when capacity is between 0% and 15%
+[[battery.display]] # "bold red" style when capacity is between 0% and 15%
 threshold = 15
 style = "bold red"
 
-[[battery.display]]  # "bold orange" style when capacity is between 15% and 30%
+[[battery.display]] # "bold orange" style when capacity is between 15% and 30%
 threshold = 30
 style = "bold fg:#FF7F00"
 
-[[battery.display]]  # "bold yellow" style when capacity is between 30% and 50%
+[[battery.display]] # "bold yellow" style when capacity is between 30% and 50%
 threshold = 50
 style = "bold yellow"
 
