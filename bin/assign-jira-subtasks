@@ -1,24 +1,25 @@
-#!/Users/step7212/.pyenv/versions/3.9.0/envs/assign-jira-subtasks/bin/python3
+#!/Users/step7212/.pyenv/versions/assign-jira-subtasks/bin/python3
 
-import json
-import sys
-import os
 import getpass
+import os
+import sys
+
 import httpx
 from rich import print
 from rich.styled import Styled
 from rich.table import Table
 
-try:  
-   token = os.environ["JIRA_TOKEN"]
-except KeyError: 
-   token = getpass.getpass(prompt="Please enter token for Jira Auth: ")
+try:
+    token = os.environ["JIRA_TOKEN"]
+except KeyError:
+    token = getpass.getpass(prompt="Please enter token for Jira Auth: ")
 
 client = httpx.Client(
     base_url="https://objectrocket.atlassian.net/rest/api/3/",
     auth=("stephen.brown@objectrocket.com", token),
     headers={"Accept": "application/json"},
 )
+
 
 def get_style_color(issue: dict):
     JIRA_COLORS_TO_STYLE = {"blue-gray": "grey66"}
