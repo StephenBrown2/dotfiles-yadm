@@ -5,6 +5,7 @@ $hostname\
 $shlvl\
 $kubernetes\
 $directory\
+$vcsh\
 $git_branch\
 $git_commit\
 $git_state\
@@ -14,6 +15,7 @@ $docker_context\
 $package\
 $cmake\
 $dart\
+$deno\
 $dotnet\
 $elixir\
 $elm\
@@ -30,6 +32,7 @@ $perl\
 $php\
 $purescript\
 $python\
+$red\
 $ruby\
 $rust\
 $scala\
@@ -80,11 +83,6 @@ fish_style_pwd_dir_length = 1
 
 [docker_context]
 disabled = false
-
-[git_status]
-show_sync_count = true
-staged_count.enabled = true
-stashed_count.enabled = true
 
 [kubernetes]
 disabled = false
