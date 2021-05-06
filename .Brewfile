@@ -18,8 +18,6 @@ tap "tlk/imagemagick-x11"
 tap "wagoodman/dive"
 # Library for command-line editing
 brew "readline"
-# Command-line interface for SQLite
-brew "sqlite"
 # General-purpose data compression with high compression ratio
 brew "xz"
 # Automate deployment, configuration, and upgrading
@@ -257,6 +255,7 @@ brew "wagoodman/dive/dive"
 cask "1password"
 # Command-line helper for the 1Password password manager
 cask "1password-cli"
+# JDK from the Java User Group (JUG)
 cask "adoptopenjdk"
 # Transfer files from and to an Android smartphone
 cask "android-file-transfer"
