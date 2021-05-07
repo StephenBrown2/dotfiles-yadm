@@ -1,0 +1,29 @@
+---
+linters:
+  enable:
+    - gofumpt
+    - govet
+    - ifshort
+    - importas
+    - nakedret
+    - nestif
+    - nilerr
+    - nolintlint
+    - structcheck # May be disabled if overlapping with 'unused'
+    - unconvert
+    - unparam
+    - unused
+    - varcheck # May be disabled if overlapping with 'unused'
+    - whitespace
+    - wsl # Useful, but too numerous at the moment
+  # disable:
+  #   - deadcode
+  disable-all: false
+
+issues:
+  max-same-issues: 10
+  new: false
+
+linters-settings:
+  gofumpt:
+    extra-rules: true
