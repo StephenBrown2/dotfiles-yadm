@@ -170,8 +170,6 @@ brew "pyenv-pip-migrate"
 brew "qemu"
 # QR Code generation
 brew "qrencode"
-# CLI for Rackspace
-brew "rack"
 # Rsync for cloud storage
 brew "rclone"
 # Perl-powered file rename script with many helpful built-ins
@@ -214,8 +212,6 @@ brew "watch"
 brew "watchexec"
 # Internet file retriever
 brew "wget"
-# Homebrew, but with Docker images
-brew "whalebrew"
 # Yet Another Dotfiles Manager
 brew "yadm"
 # JavaScript package manager
@@ -339,6 +335,8 @@ cask "securid"
 cask "session-manager-plugin"
 # Instant messaging application focusing on security
 cask "signal-beta"
+# Editor for designing and documenting APIs
+cask "stoplight-studio"
 # Interior design application
 cask "sweet-home3d"
 # Unpacks archive files
