@@ -100,6 +100,8 @@ brew "gnupg"
 brew "go"
 # Stricter gofmt
 brew "gofumpt"
+# Fast linters runner for Go
+brew "golangci-lint"
 # Graph visualization software from AT&T and Bell Labs
 brew "graphviz"
 # Toolkit for creating graphical user interfaces
@@ -148,6 +150,8 @@ brew "nmap"
 brew "nvm"
 # Development kit for the Java programming language
 brew "openjdk"
+# OpenBSD freely-licensed SSH connectivity tools
+brew "openssh"
 # Swiss-army knife of markup format conversion
 brew "pandoc"
 # CLI for Postgres with auto-completion and syntax highlighting
@@ -172,6 +176,8 @@ brew "qemu"
 brew "qrencode"
 # Rsync for cloud storage
 brew "rclone"
+# Sophisticated calendar and alarm
+brew "remind"
 # Perl-powered file rename script with many helpful built-ins
 brew "rename"
 # Tools for file renaming
@@ -263,6 +269,7 @@ cask "android-studio"
 cask "appgate-sdp-client"
 # Data management tool that enables working with SQL Server
 cask "azure-data-studio"
+# Prevents audio balance from drifting left or right
 cask "balance-lock"
 # Tool to flash OS images to SD cards & USB drives
 cask "balenaetcher"
