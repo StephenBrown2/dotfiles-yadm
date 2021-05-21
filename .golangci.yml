@@ -20,6 +20,9 @@ linters:
   #   - deadcode
   disable-all: false
 
+output:
+  sort-results: true
+
 issues:
   max-same-issues: 10
   new: false
